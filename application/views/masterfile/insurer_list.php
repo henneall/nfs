@@ -1,0 +1,159 @@
+
+    
+       
+            <!-- Breadcome start-->
+            <div class="breadcome-area mg-b-30 small-dn">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcome-list shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="">
+												<input type="text" placeholder="Search..." class="form-control">
+												<a href=""><i class="fa fa-search"></i></a>
+											</form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Insurer List</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Data Table</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+            <div id="PrimaryModalblbgpro" class="modal modal-adminpro-general default-popup-PrimaryModal PrimaryModal-bgcolor fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                            <div class="modal-header header-color-modal bg-color-1">
+                                <h4 class="modal-title">Add Insurer</h4>
+                                <div class="modal-close-area modal-close-df">
+                                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                </div>
+                            </div>
+                        <div class="modal-close-area modal-close-df">
+                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                        </div>
+                        <form method = "POST" action="<?php echo base_url();?>index.php/masterfile/insert_insurer" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <div class="form-group-inner">
+                                    <label style="color:#fff" class="pull-left">Insurer Name:</label>
+                                    <input type="text" name = "insurer" class="form-control" placeholder="Enter Insurer Name" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="button" class="btn btn-custon-rounded-four btn-danger btn-block" data-dismiss="modal" value="Cancel"/>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="submit" class="btn btn-custon-rounded-four btn-primary btn-block" value="Save"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="edit_insurer" class="modal modal-adminpro-general default-popup-PrimaryModal PrimaryModal-bgcolor fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                            <div class="modal-header header-color-modal bg-color-1">
+                                <h4 class="modal-title">Update Insurer</h4>
+                                <div class="modal-close-area modal-close-df">
+                                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                </div>
+                            </div>
+                        <div class="modal-close-area modal-close-df">
+                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                        </div>
+                        <form method = "POST" action="<?php echo base_url();?>index.php/masterfile/update_insurer" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <div class="form-group-inner">
+                                    <label style="color:#fff" class="pull-left">Insurer:</label>
+                                    <input type="text" name = "insurer" id="insurer" class="form-control" placeholder="Enter Insurer" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="hidden" name = "insurer_id" id="insurer_id" class="form-control"/>
+                                        <input type="button" class="btn btn-custon-rounded-four btn-danger btn-block" data-dismiss="modal" value="Cancel"/>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="submit" class="btn btn-custon-rounded-four btn-primary btn-block" value="Update"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Static Table Start -->
+            <div class="data-table-area mg-b-15">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="sparkline13-list shadow-reset">
+                                <div class="sparkline13-hd">
+                                    <div class="main-sparkline13-hd">
+                                        <h1>Insurer <span class="table-project-n">List</span></h1>
+                                        <div class="sparkline13-outline-icon">
+                                            <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                            <span><i class="fa fa-wrench"></i></span>
+                                            <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sparkline13-graph">
+                                    <div class="datatable-dashv1-list custom-datatable-overright">
+                                        <div id="toolbar">
+                                            <select class="form-control">
+                                                <option value="">Export Basic</option>
+                                                <option value="all">Export All</option>
+                                                <option value="selected">Export Selected</option>
+                                            </select>
+                                        </div>
+                                        <a class="btn btn-custon-rounded-four btn-primary pull-right" title="Add Insurer" data-toggle="modal" data-target="#PrimaryModalblbgpro"><span class="fa fa-plus"></span> Add Insurer</a>
+                                        <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                            <thead>
+                                                <tr>
+                                                    <th>Insurer Name</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach($insurer AS $i){ ?>
+                                                <tr>
+                                                    <td><?php echo $i->insurer_name; ?></td>
+                                                    <td colspan="1">
+                                                        <a id="upInsurer" class="btn btn-custon-rounded-four btn-primary" title="Edit" data-toggle="modal" data-target="#edit_insurer" data-id="<?php echo $i->insurer_id; ?>" data-name="<?php echo $i->insurer_name; ?>"><span class="fa fa-pencil"></span> </a>
+                                                        <a href="<?php echo base_url(); ?>index.php/masterfile/delete_insurer/<?php echo $i->insurer_id; ?>" class="btn btn-custon-rounded-four btn-danger" title="Delete" onclick="return confirm('Are you sure you want to delete this insurer?');"><span class="fa fa-trash"></span> </a>
+                                                    </td>
+                                                </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Static Table End -->
+        </div>
+    </div>
+<script type="text/javascript">
+    
+</script>
